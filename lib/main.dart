@@ -1,9 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:quiz_app_flutter/features/oboarding/screens/personal_details_screen.dart';
 import 'package:quiz_app_flutter/features/oboarding/screens/splash_screen.dart';
+import 'package:quiz_app_flutter/features/quiz/presentation/screens/questions_screen.dart';
 import 'package:quiz_app_flutter/features/quiz/presentation/screens/quiz_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -27,6 +33,11 @@ class MyApp extends StatelessWidget {
           case '/quiz':
             return MaterialPageRoute(
               builder: (context) => const QuizScreen(),
+            );
+
+          case '/questions':
+            return MaterialPageRoute(
+              builder: (context) => const QuestionScreen(),
             );
           default:
             return MaterialPageRoute(

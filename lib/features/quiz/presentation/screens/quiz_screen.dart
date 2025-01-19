@@ -70,7 +70,9 @@ class _QuizScreenState extends State<QuizScreen> {
         child: Column(
           children: [
             _spacer(),
-            const QuizTile(),
+            QuizTile(
+              onTap: () => Navigator.pushNamed(context, '/questions'),
+            ),
           ],
         ),
       ),

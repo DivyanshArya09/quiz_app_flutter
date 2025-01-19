@@ -28,7 +28,7 @@ class _PersonalDetailsScreenState extends State<PersonalDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Personal Details'),
+        title: const Text('Get Started'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
